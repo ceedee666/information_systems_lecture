@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" id="Definitions_0ilijz1" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.6.0">
+  <bpmn:process id="Process_0thb9kz" isExecutable="true">
+    <bpmn:manualTask id="Activity_1c7p3bn" name="Manuelle Aktivität" />
+    <bpmn:userTask id="Activity_0i63npf" name="Benutzer-Aktivität" />
+    <bpmn:serviceTask id="Activity_1vpkogq" name="Service-Aktivität" />
+    <bpmn:sendTask id="Activity_0w2sq08" name="Nachrichten-Senden-Aktivität" />
+    <bpmn:receiveTask id="Activity_1i4ugv7" name="Nachrichten-Empfang-Aktivität" />
+    <bpmn:businessRuleTask id="Activity_0ufwttf" name="Business-Rule-Aktivität" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_0thb9kz">
+      <bpmndi:BPMNShape id="Activity_12kb1yc_di" bpmnElement="Activity_1c7p3bn">
+        <dc:Bounds x="160" y="100" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1req20f_di" bpmnElement="Activity_0i63npf">
+        <dc:Bounds x="350" y="100" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0314pku_di" bpmnElement="Activity_1vpkogq">
+        <dc:Bounds x="160" y="260" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1t96m7w_di" bpmnElement="Activity_0w2sq08">
+        <dc:Bounds x="160" y="430" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_04l1r98_di" bpmnElement="Activity_1i4ugv7">
+        <dc:Bounds x="350" y="430" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1koq616_di" bpmnElement="Activity_0ufwttf">
+        <dc:Bounds x="350" y="260" width="100" height="80" />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

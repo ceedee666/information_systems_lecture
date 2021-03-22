@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" id="Definitions_1kasdee" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.6.0">
+  <bpmn:process id="Process_1" isExecutable="true">
+    <bpmn:task id="Task_1alc4rq" name="Kreditantrag prüfen">
+      <bpmn:outgoing>SequenceFlow_1rbwa93</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:exclusiveGateway id="ExclusiveGateway_0red3mt" name="Gewünschte Kredithöhe?">
+      <bpmn:incoming>SequenceFlow_1rbwa93</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1k9m0xf</bpmn:outgoing>
+      <bpmn:outgoing>SequenceFlow_1jbhjam</bpmn:outgoing>
+      <bpmn:outgoing>SequenceFlow_0bhwa0q</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:sequenceFlow id="SequenceFlow_1rbwa93" sourceRef="Task_1alc4rq" targetRef="ExclusiveGateway_0red3mt" />
+    <bpmn:task id="Task_0qv7rax" name="Kredit bewilligen">
+      <bpmn:incoming>SequenceFlow_1k9m0xf</bpmn:incoming>
+    </bpmn:task>
+    <bpmn:sequenceFlow id="SequenceFlow_1k9m0xf" name="&#60; 100€" sourceRef="ExclusiveGateway_0red3mt" targetRef="Task_0qv7rax" />
+    <bpmn:task id="Task_04izjls" name="Bei Schufa prüfen">
+      <bpmn:incoming>SequenceFlow_1jbhjam</bpmn:incoming>
+    </bpmn:task>
+    <bpmn:sequenceFlow id="SequenceFlow_1jbhjam" name="&#62;=100, &#60; 500€" sourceRef="ExclusiveGateway_0red3mt" targetRef="Task_04izjls" />
+    <bpmn:task id="Task_0q0nxv6" name="Vorgesetzten vorlegen">
+      <bpmn:incoming>SequenceFlow_0bhwa0q</bpmn:incoming>
+    </bpmn:task>
+    <bpmn:sequenceFlow id="SequenceFlow_0bhwa0q" name="&#62;=500€" sourceRef="ExclusiveGateway_0red3mt" targetRef="Task_0q0nxv6" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_1">
+      <bpmndi:BPMNEdge id="SequenceFlow_0bhwa0q_di" bpmnElement="SequenceFlow_0bhwa0q">
+        <di:waypoint x="375" y="248" />
+        <di:waypoint x="375" y="324" />
+        <di:waypoint x="450" y="324" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="392" y="305" width="38" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_1jbhjam_di" bpmnElement="SequenceFlow_1jbhjam">
+        <di:waypoint x="400" y="223" />
+        <di:waypoint x="450" y="223" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="384" y="183" width="72" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_1k9m0xf_di" bpmnElement="SequenceFlow_1k9m0xf">
+        <di:waypoint x="375" y="198" />
+        <di:waypoint x="375" y="125" />
+        <di:waypoint x="450" y="125" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="393" y="102" width="34" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_1rbwa93_di" bpmnElement="SequenceFlow_1rbwa93">
+        <di:waypoint x="260" y="223" />
+        <di:waypoint x="350" y="223" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Task_1alc4rq_di" bpmnElement="Task_1alc4rq">
+        <dc:Bounds x="160" y="183" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ExclusiveGateway_0red3mt_di" bpmnElement="ExclusiveGateway_0red3mt" isMarkerVisible="true">
+        <dc:Bounds x="350" y="198" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="297" y="176" width="62" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_0qv7rax_di" bpmnElement="Task_0qv7rax">
+        <dc:Bounds x="450" y="85" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_04izjls_di" bpmnElement="Task_04izjls">
+        <dc:Bounds x="450" y="183" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_0q0nxv6_di" bpmnElement="Task_0q0nxv6">
+        <dc:Bounds x="450" y="284" width="100" height="80" />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

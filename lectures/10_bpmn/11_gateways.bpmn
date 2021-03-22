@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" id="Definitions_1i730y1" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.6.0">
+  <bpmn:process id="Process_0uagyey" isExecutable="true">
+    <bpmn:exclusiveGateway id="Gateway_1e7n1ui" />
+    <bpmn:parallelGateway id="Gateway_1tim1o3" />
+    <bpmn:inclusiveGateway id="Gateway_05c09ks" />
+    <bpmn:complexGateway id="Gateway_0w0x9tx" />
+    <bpmn:eventBasedGateway id="Gateway_1uyopuy" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_0uagyey">
+      <bpmndi:BPMNShape id="Gateway_1e7n1ui_di" bpmnElement="Gateway_1e7n1ui" isMarkerVisible="true">
+        <dc:Bounds x="155" y="125" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_01jzuy1_di" bpmnElement="Gateway_1tim1o3">
+        <dc:Bounds x="155" y="265" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_0ksv3mc_di" bpmnElement="Gateway_05c09ks">
+        <dc:Bounds x="155" y="425" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_0rath4y_di" bpmnElement="Gateway_0w0x9tx">
+        <dc:Bounds x="545" y="195" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_10qasf6_di" bpmnElement="Gateway_1uyopuy">
+        <dc:Bounds x="545" y="345" width="50" height="50" />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

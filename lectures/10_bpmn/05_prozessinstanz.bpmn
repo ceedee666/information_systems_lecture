@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_1i1rmft" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.6.0">
+  <bpmn:process id="Process_0vixpla" isExecutable="true">
+    <bpmn:sequenceFlow id="Flow_00lbf40" sourceRef="Activity_07i8q0c" targetRef="Activity_0xb7xkl" />
+    <bpmn:sequenceFlow id="Flow_08uy019" sourceRef="Activity_0xb7xkl" targetRef="Activity_10xzcvy" />
+    <bpmn:sequenceFlow id="Flow_1gwtknl" sourceRef="Activity_10xzcvy" targetRef="Activity_0hyopw5" />
+    <bpmn:sequenceFlow id="Flow_02d0nsg" sourceRef="Activity_0hyopw5" targetRef="Activity_0uzl2z7" />
+    <bpmn:sequenceFlow id="Flow_0pzf6uz" sourceRef="Activity_0uzl2z7" targetRef="Activity_0sjht5w" />
+    <bpmn:sequenceFlow id="Flow_01fa88k" sourceRef="Activity_0sjht5w" targetRef="Activity_0hcyiub" />
+    <bpmn:userTask id="Activity_07i8q0c" name="Auftrag eingeben">
+      <bpmn:outgoing>Flow_00lbf40</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="Activity_0xb7xkl" name="Produkt im Lager anfordern">
+      <bpmn:incoming>Flow_00lbf40</bpmn:incoming>
+      <bpmn:outgoing>Flow_08uy019</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:manualTask id="Activity_10xzcvy" name="Produkt verpacken">
+      <bpmn:incoming>Flow_08uy019</bpmn:incoming>
+      <bpmn:outgoing>Flow_1gwtknl</bpmn:outgoing>
+    </bpmn:manualTask>
+    <bpmn:sendTask id="Activity_0hyopw5" name="Packet ausliefern">
+      <bpmn:incoming>Flow_1gwtknl</bpmn:incoming>
+      <bpmn:outgoing>Flow_02d0nsg</bpmn:outgoing>
+    </bpmn:sendTask>
+    <bpmn:sendTask id="Activity_0uzl2z7" name="Rechnung an Kunden schicken">
+      <bpmn:incoming>Flow_02d0nsg</bpmn:incoming>
+      <bpmn:outgoing>Flow_0pzf6uz</bpmn:outgoing>
+    </bpmn:sendTask>
+    <bpmn:receiveTask id="Activity_0sjht5w" name="Zahlung empfangen">
+      <bpmn:incoming>Flow_0pzf6uz</bpmn:incoming>
+      <bpmn:outgoing>Flow_01fa88k</bpmn:outgoing>
+    </bpmn:receiveTask>
+    <bpmn:serviceTask id="Activity_0hcyiub" name="Vorgang ablegen">
+      <bpmn:incoming>Flow_01fa88k</bpmn:incoming>
+    </bpmn:serviceTask>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_0vixpla">
+      <bpmndi:BPMNEdge id="Flow_00lbf40_di" bpmnElement="Flow_00lbf40">
+        <di:waypoint x="260" y="120" />
+        <di:waypoint x="322" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_08uy019_di" bpmnElement="Flow_08uy019">
+        <di:waypoint x="422" y="120" />
+        <di:waypoint x="489" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1gwtknl_di" bpmnElement="Flow_1gwtknl">
+        <di:waypoint x="589" y="120" />
+        <di:waypoint x="656" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_02d0nsg_di" bpmnElement="Flow_02d0nsg">
+        <di:waypoint x="756" y="120" />
+        <di:waypoint x="823" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0pzf6uz_di" bpmnElement="Flow_0pzf6uz">
+        <di:waypoint x="923" y="120" />
+        <di:waypoint x="990" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_01fa88k_di" bpmnElement="Flow_01fa88k">
+        <di:waypoint x="1090" y="120" />
+        <di:waypoint x="1150" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Activity_0atjgge_di" bpmnElement="Activity_07i8q0c">
+        <dc:Bounds x="160" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1w2rpfa_di" bpmnElement="Activity_0xb7xkl">
+        <dc:Bounds x="322" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0qv51ol_di" bpmnElement="Activity_10xzcvy">
+        <dc:Bounds x="489" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0bqi60k_di" bpmnElement="Activity_0hyopw5">
+        <dc:Bounds x="656" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_18mw5b9_di" bpmnElement="Activity_0uzl2z7">
+        <dc:Bounds x="823" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0gfdriu_di" bpmnElement="Activity_0sjht5w">
+        <dc:Bounds x="990" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_111ont4_di" bpmnElement="Activity_0hcyiub">
+        <dc:Bounds x="1150" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

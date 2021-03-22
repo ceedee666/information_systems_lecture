@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" id="Definitions_1i1rmft" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.6.0">
+  <bpmn:process id="Process_0vixpla" isExecutable="true">
+    <bpmn:task id="Activity_07i8q0c" name="Auftrag eingeben" />
+    <bpmn:task id="Activity_0xb7xkl" name="Produkt im Lager anfordern" />
+    <bpmn:task id="Activity_10xzcvy" name="Produkt verpacken" />
+    <bpmn:task id="Activity_0hyopw5" name="Packet ausliefern" />
+    <bpmn:task id="Activity_0uzl2z7" name="Rechnung an Kunden schicken" />
+    <bpmn:task id="Activity_0sjht5w" name="Zahlung empfangen" />
+    <bpmn:task id="Activity_0hcyiub" name="Vorgang ablegen" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_0vixpla">
+      <bpmndi:BPMNShape id="Activity_07i8q0c_di" bpmnElement="Activity_07i8q0c">
+        <dc:Bounds x="160" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0hcyiub_di" bpmnElement="Activity_0hcyiub">
+        <dc:Bounds x="1150" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0xb7xkl_di" bpmnElement="Activity_0xb7xkl">
+        <dc:Bounds x="322" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_10xzcvy_di" bpmnElement="Activity_10xzcvy">
+        <dc:Bounds x="489" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0hyopw5_di" bpmnElement="Activity_0hyopw5">
+        <dc:Bounds x="656" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0uzl2z7_di" bpmnElement="Activity_0uzl2z7">
+        <dc:Bounds x="823" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0sjht5w_di" bpmnElement="Activity_0sjht5w">
+        <dc:Bounds x="990" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
