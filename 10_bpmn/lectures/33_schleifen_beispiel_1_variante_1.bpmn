@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" id="Definitions_0k80gjb" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.6.0">
+  <bpmn:process id="Process_1" isExecutable="true">
+    <bpmn:startEvent id="StartEvent_1" name="Fotoalbum erstellt">
+      <bpmn:outgoing>SequenceFlow_12rh3va</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:task id="Task_0xavw2o" name="Fotos hochladen">
+      <bpmn:incoming>SequenceFlow_12rh3va</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0yxkm7t</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_1rva3e1" name="Vorgang abschließen">
+      <bpmn:incoming>SequenceFlow_0yxkm7t</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0nrs2tt</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:endEvent id="EndEvent_1lqm4te" name="Fotos hochgeladen">
+      <bpmn:incoming>SequenceFlow_0nrs2tt</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="SequenceFlow_0nrs2tt" sourceRef="Task_1rva3e1" targetRef="EndEvent_1lqm4te" />
+    <bpmn:sequenceFlow id="SequenceFlow_12rh3va" sourceRef="StartEvent_1" targetRef="Task_0xavw2o" />
+    <bpmn:sequenceFlow id="SequenceFlow_0yxkm7t" sourceRef="Task_0xavw2o" targetRef="Task_1rva3e1" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_1">
+      <bpmndi:BPMNEdge id="SequenceFlow_12rh3va_di" bpmnElement="SequenceFlow_12rh3va">
+        <di:waypoint x="216" y="120" />
+        <di:waypoint x="308" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_0yxkm7t_di" bpmnElement="SequenceFlow_0yxkm7t">
+        <di:waypoint x="408" y="120" />
+        <di:waypoint x="505" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_0nrs2tt_di" bpmnElement="SequenceFlow_0nrs2tt">
+        <di:waypoint x="605" y="120" />
+        <di:waypoint x="696" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="180" y="102" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="155" y="145" width="88" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_0xavw2o_di" bpmnElement="Task_0xavw2o">
+        <dc:Bounds x="308" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_1rva3e1_di" bpmnElement="Task_1rva3e1">
+        <dc:Bounds x="505" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="EndEvent_1lqm4te_di" bpmnElement="EndEvent_1lqm4te">
+        <dc:Bounds x="696" y="102" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="682" y="145" width="64" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

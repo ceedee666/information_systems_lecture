@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" id="Definitions_04a8hn6" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.6.0">
+  <bpmn:collaboration id="Collaboration_1i8nspb">
+    <bpmn:participant id="Participant_187ix1o" name="Prüfungsamt" processRef="Process_1n0lxs9" />
+  </bpmn:collaboration>
+  <bpmn:process id="Process_1n0lxs9" isExecutable="true">
+    <bpmn:laneSet id="LaneSet_0v3qqwk">
+      <bpmn:lane id="Lane_0y2wfbj" name="Mitarbeiter" />
+      <bpmn:lane id="Lane_03g0u0g" name="QIS">
+        <bpmn:childLaneSet id="LaneSet_11j5cl8" />
+      </bpmn:lane>
+      <bpmn:lane id="Lane_01lje55" name="Hr. Müller" />
+    </bpmn:laneSet>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_1i8nspb">
+      <bpmndi:BPMNShape id="Participant_187ix1o_di" bpmnElement="Participant_187ix1o" isHorizontal="true">
+        <dc:Bounds x="129" y="79" width="600" height="370" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_0y2wfbj_di" bpmnElement="Lane_0y2wfbj" isHorizontal="true">
+        <dc:Bounds x="159" y="79" width="570" height="125" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_03g0u0g_di" bpmnElement="Lane_03g0u0g" isHorizontal="true">
+        <dc:Bounds x="159" y="204" width="570" height="125" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_01lje55_di" bpmnElement="Lane_01lje55" isHorizontal="true">
+        <dc:Bounds x="159" y="329" width="570" height="120" />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

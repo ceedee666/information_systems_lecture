@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Definitions_0altbyd" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.6.0">
+  <bpmn:collaboration id="Collaboration_07ckktj">
+    <bpmn:participant id="Participant_0lbu4tj" name="Kunde" />
+    <bpmn:participant id="Participant_0wn0nf1" name="Unternehmen" />
+    <bpmn:participant id="Participant_0y2d775" name="Lieferant" />
+    <bpmn:messageFlow id="Flow_18m8tkm" name="Auftrag" sourceRef="Participant_0lbu4tj" targetRef="Participant_0wn0nf1" />
+    <bpmn:messageFlow id="Flow_1s5imkc" name="Lieferung" sourceRef="Participant_0wn0nf1" targetRef="Participant_0lbu4tj" />
+    <bpmn:messageFlow id="Flow_1lohtxm" name="Rechnung" sourceRef="Participant_0wn0nf1" targetRef="Participant_0lbu4tj" />
+    <bpmn:messageFlow id="Flow_0u4v96z" name="Bezahlung" sourceRef="Participant_0lbu4tj" targetRef="Participant_0wn0nf1" />
+    <bpmn:messageFlow id="Flow_07ztzlr" name="Bestellung" sourceRef="Participant_0wn0nf1" targetRef="Participant_0y2d775" />
+    <bpmn:messageFlow id="Flow_16nd5cz" name="Lieferung" sourceRef="Participant_0y2d775" targetRef="Participant_0wn0nf1" />
+  </bpmn:collaboration>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_07ckktj">
+      <bpmndi:BPMNShape id="Participant_0fxv5mz_di" bpmnElement="Participant_0lbu4tj" isHorizontal="true">
+        <dc:Bounds x="123" y="80" width="1077" height="60" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Participant_1cg2drk_di" bpmnElement="Participant_0wn0nf1" isHorizontal="true">
+        <dc:Bounds x="123" y="222" width="1077" height="60" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Participant_06sij36_di" bpmnElement="Participant_0y2d775" isHorizontal="true">
+        <dc:Bounds x="123" y="370" width="1077" height="60" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_18m8tkm_di" bpmnElement="Flow_18m8tkm">
+        <di:waypoint x="230" y="140" />
+        <di:waypoint x="230" y="222" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="242" y="173" width="36" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1s5imkc_di" bpmnElement="Flow_1s5imkc">
+        <di:waypoint x="960" y="222" />
+        <di:waypoint x="960" y="140" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="967" y="173" width="46" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1lohtxm_di" bpmnElement="Flow_1lohtxm">
+        <di:waypoint x="1050" y="222" />
+        <di:waypoint x="1050" y="140" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1064" y="173" width="51" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0u4v96z_di" bpmnElement="Flow_0u4v96z">
+        <di:waypoint x="1140" y="140" />
+        <di:waypoint x="1140" y="222" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1154" y="173" width="52" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_07ztzlr_di" bpmnElement="Flow_07ztzlr">
+        <di:waypoint x="560" y="282" />
+        <di:waypoint x="560" y="370" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="564" y="323" width="52" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_16nd5cz_di" bpmnElement="Flow_16nd5cz">
+        <di:waypoint x="662" y="370" />
+        <di:waypoint x="662" y="282" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="677" y="323" width="46" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
