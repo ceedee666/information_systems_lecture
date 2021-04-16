@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="Definitions_11768re" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.7.0">
+  <decision id="Decision_0za3lbr" name="Getränke">
+    <decisionTable id="DecisionTable_00je0ay" hitPolicy="COLLECT">
+      <input id="Input_1" label="Gericht ">
+        <inputExpression id="InputExpression_1" typeRef="string">
+          <text></text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_065jqfu" label="Kinder anwesend?" biodi:width="192">
+        <inputExpression id="LiteralExpression_0lhot52" typeRef="boolean">
+          <text></text>
+        </inputExpression>
+      </input>
+      <output id="Output_1" label="Getränk" typeRef="string" />
+      <rule id="DecisionRule_0aaxaqa">
+        <inputEntry id="UnaryTests_00o11l6">
+          <text>"Spargel"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_153orp6">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_15sjwvd">
+          <text>"Weißwein"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_09wrd6o">
+        <inputEntry id="UnaryTests_13d2eeo">
+          <text>not("Spargel")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_093ewpe">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_05na8zk">
+          <text>"Bier"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0rnuucg">
+        <inputEntry id="UnaryTests_1d9yi9x">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0urj5y4">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_04y942g">
+          <text>"Soft-Drinks"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_06456vs">
+        <inputEntry id="UnaryTests_0gh2ucv">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_00a4rrn">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0o7g2z7">
+          <text>"Wasser"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="Decision_0za3lbr">
+        <dc:Bounds height="80" width="180" x="160" y="100" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>

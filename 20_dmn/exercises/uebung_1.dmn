@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="Definitions_0tai6bu" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.7.0">
+  <decision id="Decision_0ah6cb6" name="Kreditwürdigkeit">
+    <decisionTable id="DecisionTable_0m1xct3">
+      <input id="Input_1" label="Schuldenstand">
+        <inputExpression id="InputExpression_1" typeRef="string">
+          <text></text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_03k5j91" label="Beruflicher Werdegang">
+        <inputExpression id="LiteralExpression_0tj3rdb" typeRef="string">
+          <text></text>
+        </inputExpression>
+      </input>
+      <output id="Output_1" label="Kreditwürdigkeit" typeRef="string" />
+      <rule id="DecisionRule_033mwh6">
+        <inputEntry id="UnaryTests_13f1dqy">
+          <text>"gering"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_10rtalc">
+          <text>"gut"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1odv2k4">
+          <text>"A"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_10cksrh">
+        <inputEntry id="UnaryTests_1ewi3si">
+          <text>"gering"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1oo2lwu">
+          <text>"schlecht"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ytjxgq">
+          <text>"B"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_02hoida">
+        <inputEntry id="UnaryTests_0rx4usw">
+          <text>"hoch"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1oii1f4">
+          <text>"gut"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_018ch6d">
+          <text>"B"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0ab01o9">
+        <inputEntry id="UnaryTests_0ni9kl7">
+          <text>"hoch"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0qz7va0">
+          <text>"schlecht"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0aq94ul">
+          <text>"C"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="Decision_0ah6cb6">
+        <dc:Bounds height="80" width="180" x="160" y="100" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>

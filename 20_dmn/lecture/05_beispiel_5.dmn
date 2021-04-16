@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="Definitions_1s25wxz" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.7.0">
+  <decision id="Decision_115dh3i" name="Mahlzeit">
+    <decisionTable id="DecisionTable_1eq4wyp">
+      <input id="Input_1" label="Jahreszeit">
+        <inputExpression id="InputExpression_1" typeRef="string">
+          <text></text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1ez12n8" label="Vegetarier als Gäste" biodi:width="192">
+        <inputExpression id="LiteralExpression_1xmu32u" typeRef="boolean">
+          <text></text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0j7cc5w" label="Anzahl Gäste">
+        <inputExpression id="LiteralExpression_11n25qo" typeRef="integer">
+          <text></text>
+        </inputExpression>
+      </input>
+      <output id="Output_1" label="Gericht" typeRef="string" />
+      <output id="OutputClause_1ghh03b" label="Beilage" typeRef="string" />
+      <rule id="DecisionRule_02dmjmi">
+        <inputEntry id="UnaryTests_039ad7v">
+          <text>"Frühling"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1q0hbr4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hzqahq">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0lve8kl">
+          <text>"Spargel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1b568gc">
+          <text>"Kartoffeln"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0q6bl0o">
+        <inputEntry id="UnaryTests_0ey5h7s">
+          <text>"Sommer"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_120z39c">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0wvgiro">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0d8o3jr">
+          <text>"Salat"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0sn00j8">
+          <text>"Brot"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1q7vaji">
+        <inputEntry id="UnaryTests_1mt12gd">
+          <text>"Herbst"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0z4k7hf">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_02d1slr">
+          <text>&lt;4</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0se7gl1">
+          <text>"Dry Aged Steak"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1usx19h">
+          <text>"Bratkartoffeln"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0f42jie">
+        <inputEntry id="UnaryTests_1j1961e">
+          <text>"Herbst"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0zvxure">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0s52tq9">
+          <text>&gt;= 4</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0xmal0o">
+          <text>"Steak"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1n72ew2">
+          <text>"Bratkartoffeln"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_074rg5x">
+        <inputEntry id="UnaryTests_1fai257">
+          <text>"Winter"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0b741ky">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1lmjc8f">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ywsawr">
+          <text>"Gulasch"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_00r1b3u">
+          <text>"Reis"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0vl2gmt">
+        <inputEntry id="UnaryTests_04zrcoi">
+          <text>"Herbst","Winter"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0bw2w1u">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17k0rfk">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_02bgv9h">
+          <text>"Pasta"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_00qgdh8">
+          <text>"Salat"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="Decision_115dh3i">
+        <dc:Bounds height="80" width="180" x="160" y="100" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>

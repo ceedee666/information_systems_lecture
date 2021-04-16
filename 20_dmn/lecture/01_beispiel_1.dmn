@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="Definitions_1s25wxz" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.6.0">
+  <decision id="Decision_115dh3i" name="Mahlzeit">
+    <decisionTable id="DecisionTable_1eq4wyp">
+      <input id="Input_1" label="Jahreszeit">
+        <inputExpression id="InputExpression_1" typeRef="string">
+          <text></text>
+        </inputExpression>
+      </input>
+      <output id="Output_1" label="Gericht" typeRef="string" />
+      <rule id="DecisionRule_02dmjmi">
+        <inputEntry id="UnaryTests_039ad7v">
+          <text>"Frühling"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0lve8kl">
+          <text>"Spargel"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0q6bl0o">
+        <inputEntry id="UnaryTests_0ey5h7s">
+          <text>"Sommer"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0d8o3jr">
+          <text>"Salat"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1q7vaji">
+        <inputEntry id="UnaryTests_1mt12gd">
+          <text>"Herbst"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0se7gl1">
+          <text>"Steak"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_074rg5x">
+        <inputEntry id="UnaryTests_1fai257">
+          <text>"Winter"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ywsawr">
+          <text>"Gulasch"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="Decision_115dh3i">
+        <dc:Bounds height="80" width="180" x="160" y="100" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>

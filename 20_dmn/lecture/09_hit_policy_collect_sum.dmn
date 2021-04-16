@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="Definitions_0zcxjtm" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.7.0">
+  <decision id="Decision_0y4oogf" name="Kostümbewertung">
+    <decisionTable id="DecisionTable_16par2e" hitPolicy="COLLECT" aggregation="SUM">
+      <input id="Input_1" label="Herstellungsart">
+        <inputExpression id="InputExpression_1" typeRef="string">
+          <text></text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0wn0jxx" label="Schminke">
+        <inputExpression id="LiteralExpression_1o4u4f9" typeRef="string">
+          <text></text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1ar9vuy" label="Kreativität">
+        <inputExpression id="LiteralExpression_0gk36nz" typeRef="string">
+          <text></text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0b0s5wb" label="Realistisch?" biodi:width="192">
+        <inputExpression id="LiteralExpression_1dk4fdd" typeRef="boolean">
+          <text></text>
+        </inputExpression>
+      </input>
+      <output id="Output_1" label="Punkte" typeRef="integer" biodi:width="194" />
+      <rule id="DecisionRule_1q30ksl">
+        <inputEntry id="UnaryTests_0n3kvgw">
+          <text>"Selbst genäht"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0lyk3u6">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0yift55">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0mab9jd">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_05lsspz">
+          <text>20</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1el1f4m">
+        <inputEntry id="UnaryTests_1s5k1ba">
+          <text>"Aus andern Kostümen zusammengewürfelt"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1myivk8">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_13kxhvc">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1pcqe8o">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_02fiv2x">
+          <text>10</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_128qexn">
+        <inputEntry id="UnaryTests_04vz4c0">
+          <text>"Gekauft"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_14sdjw7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_01y8pc8">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0bp9h45">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0n6iprk">
+          <text>0</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1ph7lpr">
+        <inputEntry id="UnaryTests_0ozswoa">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0jajvax">
+          <text>"Keine"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_109g3dj">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_18u5yth">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1m2q9ut">
+          <text>-10</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_10s6ndv">
+        <inputEntry id="UnaryTests_1a6c5iy">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1r19t3j">
+          <text>"ein wenig"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1f3lb2r">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0w19g4m">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1wbiaia">
+          <text>10</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1hlwvxc">
+        <inputEntry id="UnaryTests_0rs87n0">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0t64jwa">
+          <text>"Ernsthaft"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0j1eo65">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_09jh58s">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_074rxk2">
+          <text>20</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0ddua8p">
+        <inputEntry id="UnaryTests_198vy8k">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_13bajo1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_03w5g2n">
+          <text>"Langweilig"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1bu1k41">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1vfoau7">
+          <text>-20</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_069dwtk">
+        <inputEntry id="UnaryTests_0vtcanz">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1omur7u">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1rxty7b">
+          <text>"Sehr Kreativ"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1kt1adc">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_09t1vhz">
+          <text>20</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1rlvi2q">
+        <inputEntry id="UnaryTests_0q58r80">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1vlofqf">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1js3m7v">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0rxbe3q">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0mun2qs">
+          <text>5</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0p4acho">
+        <inputEntry id="UnaryTests_0bya9bx">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1b9m87j">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_13zwvrp">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0r1jyfd">
+          <text>false</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0if0a6s">
+          <text>0</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="Decision_0y4oogf">
+        <dc:Bounds height="80" width="180" x="160" y="100" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>
