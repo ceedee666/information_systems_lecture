@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="Definitions_18se9fk" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.7.0">
+  <inputData id="InputData_0x1hyy6" name="Jahreszeit" />
+  <inputData id="InputData_0c491pw" name="Anzahl Gäste" />
+  <inputData id="InputData_19myfkw" name="Kinder anwesend?" />
+  <inputData id="InputData_1606gu9" name="Trockene Alkoholiker anwedsend?" />
+  <decision id="Decision_0njm8vc" name="Getränke">
+    <informationRequirement id="InformationRequirement_1d7tdh9">
+      <requiredDecision href="#Decision_0a5sxcz" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_193nshi">
+      <requiredDecision href="#Decision_0hhre2p" />
+    </informationRequirement>
+    <decisionTable id="DecisionTable_0vlp5ea" hitPolicy="COLLECT">
+      <input id="InputClause_0v4gz3g" label="Gericht">
+        <inputExpression id="LiteralExpression_023ht3g" typeRef="string">
+          <text>Gericht</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0g13lb7" label="Antialkoholisch">
+        <inputExpression id="LiteralExpression_1534dip" typeRef="boolean">
+          <text>Antialkoholisch</text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_0i7cues" label="Getränk" name="Getränk" typeRef="string" />
+      <rule id="DecisionRule_03mmrpy">
+        <inputEntry id="UnaryTests_0katu9y">
+          <text>"Spargel"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_14t0kor">
+          <text>false</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0nu2573">
+          <text>"Weißwein"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0n7pqe1">
+        <inputEntry id="UnaryTests_05alclz">
+          <text>not("Spargel")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hu3hty">
+          <text>false</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1peii20">
+          <text>"Bier"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_19jm0ut">
+        <inputEntry id="UnaryTests_1xniyhs">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1yqfu6z">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0h4k017">
+          <text>"Apfelsaft"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0wpyday">
+        <inputEntry id="UnaryTests_0rhj9r4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0amypw8">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0girf8k">
+          <text>"Wasser"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <decision id="Decision_0hhre2p" name="Alkoholische Getränke">
+    <informationRequirement id="InformationRequirement_0xqsd2z">
+      <requiredInput href="#InputData_19myfkw" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_04sgh9y">
+      <requiredInput href="#InputData_1606gu9" />
+    </informationRequirement>
+    <decisionTable id="DecisionTable_1r45fer" hitPolicy="FIRST">
+      <input id="InputClause_0skc5bw" label="Kinder anwesend?">
+        <inputExpression id="LiteralExpression_0tigxq1" typeRef="boolean">
+          <text>KinderAnwesend</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_09re0gz" label="Trockene Alkoholiker?">
+        <inputExpression id="LiteralExpression_0v8sy3t" typeRef="boolean">
+          <text>TrockeneAlkoholiker</text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_1ytewaa" label="Antialkoholisch" name="Antialkoholisch" typeRef="boolean" />
+      <rule id="DecisionRule_19mtlti">
+        <inputEntry id="UnaryTests_1duc7hu">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0vmezw6">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0aayj8a">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1wqtql4">
+        <inputEntry id="UnaryTests_1bvk3cn">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0kyriz0">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0o742gf">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0u2hoas">
+        <inputEntry id="UnaryTests_0maw6t2">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0rtzus0">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1oovx3k">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <decision id="Decision_0a5sxcz" name="Gericht">
+    <informationRequirement id="InformationRequirement_13y8bcp">
+      <requiredInput href="#InputData_0x1hyy6" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_1cza0jv">
+      <requiredInput href="#InputData_0c491pw" />
+    </informationRequirement>
+    <decisionTable id="DecisionTable_0hz67fg">
+      <input id="InputClause_0r1c18u" label="Jahreszeit">
+        <inputExpression id="LiteralExpression_1pztclt" typeRef="string">
+          <text>Jahreszeit</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0boht2h" label="Anzahl Gäste" biodi:width="192">
+        <inputExpression id="LiteralExpression_00l2yg3" typeRef="integer">
+          <text>AnzahlGäste</text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_1ccx6ao" label="Gericht" name="Gericht" typeRef="string" />
+      <rule id="DecisionRule_0wfqz6u">
+        <inputEntry id="UnaryTests_1guwk58">
+          <text>"Frühling"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_036xsve">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_160xd9l">
+          <text>"Spargel"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_12b4x68">
+        <inputEntry id="UnaryTests_0qlrgo8">
+          <text>"Sommer"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_03ckgen">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1bsmnq4">
+          <text>"Salat"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0b1cmld">
+        <inputEntry id="UnaryTests_00c7fag">
+          <text>"Herbst"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0qfrwgf">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_03160e3">
+          <text>"Steak"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0nptcds">
+        <inputEntry id="UnaryTests_1o87c7f">
+          <text>"Winter"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1e4p7l0">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0xeg4t6">
+          <text>"Gulasch"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNEdge id="DMNEdge_1ub04kw" dmnElementRef="InformationRequirement_1d7tdh9">
+        <di:waypoint x="320" y="230" />
+        <di:waypoint x="490" y="180" />
+        <di:waypoint x="490" y="160" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_0wizkx4" dmnElementRef="InformationRequirement_193nshi">
+        <di:waypoint x="740" y="230" />
+        <di:waypoint x="550" y="180" />
+        <di:waypoint x="550" y="160" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_0djwpsy" dmnElementRef="InputData_0x1hyy6">
+        <dc:Bounds height="45" width="125" x="157" y="397" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_0u9ruql" dmnElementRef="InformationRequirement_13y8bcp">
+        <di:waypoint x="220" y="397" />
+        <di:waypoint x="290" y="330" />
+        <di:waypoint x="290" y="310" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_0gvvheg" dmnElementRef="InputData_0c491pw">
+        <dc:Bounds height="45" width="125" x="347" y="397" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_1ufm26y" dmnElementRef="InformationRequirement_1cza0jv">
+        <di:waypoint x="410" y="397" />
+        <di:waypoint x="350" y="330" />
+        <di:waypoint x="350" y="310" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_1ruvc7u" dmnElementRef="InputData_19myfkw">
+        <dc:Bounds height="45" width="125" x="597" y="397" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_06epdeb" dmnElementRef="InformationRequirement_0xqsd2z">
+        <di:waypoint x="660" y="397" />
+        <di:waypoint x="710" y="330" />
+        <di:waypoint x="710" y="310" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_1lfhqa0" dmnElementRef="InputData_1606gu9">
+        <dc:Bounds height="45" width="125" x="777" y="397" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_0kigach" dmnElementRef="InformationRequirement_04sgh9y">
+        <di:waypoint x="840" y="397" />
+        <di:waypoint x="770" y="330" />
+        <di:waypoint x="770" y="310" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_0s7oca0" dmnElementRef="Decision_0njm8vc">
+        <dc:Bounds height="80" width="180" x="430" y="80" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_12agide" dmnElementRef="Decision_0hhre2p">
+        <dc:Bounds height="80" width="180" x="650" y="230" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_0u4e1km" dmnElementRef="Decision_0a5sxcz">
+        <dc:Bounds height="80" width="180" x="230" y="230" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>
