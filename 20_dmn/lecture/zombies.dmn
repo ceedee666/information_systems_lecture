@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="zombies_waffenauswahl" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.7.0">
+  <decision id="weapon_choise" name="Waffenauswahl">
+    <informationRequirement id="InformationRequirement_0ffbxnc">
+      <requiredInput href="#zombie_type" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_03afq1o">
+      <requiredInput href="#danger_level" />
+    </informationRequirement>
+    <decisionTable id="DecisionTable_1sto2a6">
+      <input id="Input_1" label="Zombieart">
+        <inputExpression id="InputExpression_1" typeRef="string">
+          <text>zombie_type</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0re3v69" label="Gefährlichkeit">
+        <inputExpression id="LiteralExpression_10985el" typeRef="integer">
+          <text>danger_level</text>
+        </inputExpression>
+      </input>
+      <output id="Output_1" label="Waffe" name="weapon" typeRef="string" />
+      <rule id="DecisionRule_1uvu7oc">
+        <inputEntry id="UnaryTests_0e3uk0q">
+          <text>"Lurker"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1wula8t">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0xhg7kn">
+          <text>"Messer"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1uqu0n7">
+        <inputEntry id="UnaryTests_1tn58tx">
+          <text>"Biter"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_179p2cv">
+          <text>&lt;150</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_13y80r6">
+          <text>"Messer"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1mst1q9">
+        <inputEntry id="UnaryTests_10vp1e5">
+          <text>"Biter"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1efu6sd">
+          <text>&gt;=150</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0gomifb">
+          <text>"Armbrust"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1j5pzu0">
+        <inputEntry id="UnaryTests_0559f0l">
+          <text>"Monster"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ec4wkr">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1yk547z">
+          <text>"Armbrust"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <inputData id="zombie_type" name="Art des Zombies" />
+  <inputData id="danger_level" name="Gefährlichkeit" />
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="weapon_choise">
+        <dc:Bounds height="80" width="180" x="270" y="100" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_0ytn650" dmnElementRef="zombie_type">
+        <dc:Bounds height="45" width="125" x="158" y="268" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_0ulu832" dmnElementRef="InformationRequirement_0ffbxnc">
+        <di:waypoint x="221" y="268" />
+        <di:waypoint x="330" y="200" />
+        <di:waypoint x="330" y="180" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_1d7ydyk" dmnElementRef="danger_level">
+        <dc:Bounds height="45" width="125" x="427" y="268" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_1e6ccdv" dmnElementRef="InformationRequirement_03afq1o">
+        <di:waypoint x="490" y="268" />
+        <di:waypoint x="390" y="200" />
+        <di:waypoint x="390" y="180" />
+      </dmndi:DMNEdge>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>
