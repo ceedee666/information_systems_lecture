@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="Definitions_0pag5yn" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.7.0">
+  <decision id="Decision_100zj6j" name="Gesundheitsrisiko">
+    <decisionTable id="DecisionTable_10u8nww">
+      <input id="Input_1" label="Alter">
+        <inputExpression id="InputExpression_1" typeRef="integer">
+          <text></text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0qdwai7" label="Krankengeschichte">
+        <inputExpression id="LiteralExpression_11mbufo" typeRef="string">
+          <text></text>
+        </inputExpression>
+      </input>
+      <output id="Output_1" label="Gesundheitsrisiko" typeRef="string" />
+      <rule id="DecisionRule_19p5haz">
+        <inputEntry id="UnaryTests_0wqev1d">
+          <text>&lt;20</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_19jd1nl">
+          <text>"Gut"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ama30f">
+          <text>"Gering"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1l8fjk9">
+        <inputEntry id="UnaryTests_1lme2f5">
+          <text>&lt; 20</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1sum87k">
+          <text>"Schlecht"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0c82snm">
+          <text>"Mittel"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_07o6p6v">
+        <inputEntry id="UnaryTests_1brja5e">
+          <text>[20..65]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1cxutly">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0jr665g">
+          <text>"Mittel"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1l0l41r">
+        <inputEntry id="UnaryTests_10czl9m">
+          <text>&gt;65</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ke8kqg">
+          <text>"Gut"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_08ckqhr">
+          <text>"Mittel"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_004y82c">
+        <inputEntry id="UnaryTests_10tnwaw">
+          <text>&gt;65</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0pegmni">
+          <text>"Schlecht"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ejxb1p">
+          <text>"Hoch"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="Decision_100zj6j">
+        <dc:Bounds height="80" width="180" x="160" y="100" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>
