@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="zombies_waffenauswahl" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.7.0">
-  <decision id="weapon_choise" name="Waffenauswahl">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="zombies_waffenauswahl" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.22.0">
+  <decision id="weapon_choise" name="Waffenauswahl" camunda:historyTimeToLive="P540D">
     <informationRequirement id="InformationRequirement_0ffbxnc">
       <requiredInput href="#zombie_type" />
     </informationRequirement>
@@ -35,7 +35,7 @@
           <text>"Biter"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_179p2cv">
-          <text>&lt;150</text>
+          <text>&lt;50</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_13y80r6">
           <text>"Messer"</text>
@@ -46,7 +46,7 @@
           <text>"Biter"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1efu6sd">
-          <text>&gt;=150</text>
+          <text>&gt;=50</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0gomifb">
           <text>"Armbrust"</text>
