@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="Definitions_1s25wxz" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.7.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="Definitions_1s25wxz" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.22.0">
   <decision id="Decision_115dh3i" name="Mahlzeit">
     <decisionTable id="DecisionTable_1eq4wyp" hitPolicy="FIRST">
       <input id="Input_1" label="Jahreszeit">
@@ -8,7 +8,7 @@
         </inputExpression>
       </input>
       <input id="InputClause_1j0mm8u" label="Datum" biodi:width="260">
-        <inputExpression id="LiteralExpression_02mmgtv" typeRef="date">
+        <inputExpression id="LiteralExpression_02mmgtv" typeRef="string">
           <text></text>
         </inputExpression>
       </input>
@@ -18,7 +18,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0emncs4">
-          <text>date("2021-12-31")</text>
+          <text>"Silvester"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_18yj09k">
           <text>"Fondue"</text>
